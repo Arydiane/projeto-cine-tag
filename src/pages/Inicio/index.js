@@ -10,10 +10,10 @@ function Inicio() {
 
     useEffect(() => {
         fetch('https://my-json-server.typicode.com/monicahillman/cinetag-api/videos')
-        .then(resposta => resposta.json())
-        .then(dados => {
-            setVideos(dados)
-        })
+            .then(resposta => resposta.json())
+            .then(dados => {
+                setVideos(dados)
+            })
     }, [])
 
     return (
@@ -23,7 +23,7 @@ function Inicio() {
                 <h1>Um lugar para guardar seus vídeos e filmes!</h1>
             </Titulo>
            <section className={styles.container}>
-            {videos.map( video => {
+            {videos.map(video => {
                return <Card {...video} key={video.id} />
             })}
            </section>
